@@ -1,3 +1,21 @@
-p {
-  font-size: 1000px;
+.navbar-container {
+    .navber_title {
+        margin-left: 10px;
+    }
+    .search-container {
+        display: flex;
+
+        .search_items {
+            height: 32px;
+        }
+        .search_item_1 {
+        }
+        .search_item_2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            font-size: 10px;
+        }
+    }
 }

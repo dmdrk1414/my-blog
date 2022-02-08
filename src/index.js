@@ -1,8 +1,13 @@
+/* eslint-disable */ // 전체 룰 끄기
+
 // main index.html
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
+
+// 이걸 안하면 bootstrap 사용 안된다 주의
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // index.scss 통합 import scss 파일
 import './scss/index.scss';

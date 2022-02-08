@@ -1,3 +1,5 @@
+/* eslint-disable */ // 전체 룰 끄기
+
 import logo from '../logo/logo.svg';
 // import "bootstrap/scss"
 
