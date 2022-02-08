@@ -1,27 +1,14 @@
-// main index.html
-
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// index.scss 통합 import scss 파일
-import './scss/index.scss';
-
-// view 을 import 을하라
-import App from './view/App';
-
-// component
-import Manu from './view/component/Manu';
-
-// screen
-
-// html
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <Manu />
+    <App />
   </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
