@@ -1,0 +1,16 @@
+$mainImage-width: 100%;
+$mainImage-height: 350px;
+
+.mainImage_container {
+    padding: 48px;
+    .mainImage_image {
+        content: url(../../../image/image_1.jpg);
+        width: $mainImage-width;
+        height: $mainImage-height;
+        filter: grayscale(70%);
+    }
+
+    @media (max-width: 425px) {
+        display: none;
+    }
+}

@@ -1,14 +1,27 @@
+.manu {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
 .navbar-container {
     .navber_title {
         margin-left: 10px;
+
+        @media (max-width: 425px) {
+            font-size: 10px;
+        }
     }
-    .search-container {
+    .navber_search {
         display: flex;
 
         .search_items {
             height: 32px;
         }
         .search_item_1 {
+            @media (max-width: 425px) {
+                width: 80px;
+                height: 15;
+            }
         }
         .search_item_2 {
             display: flex;
@@ -16,6 +29,13 @@
             justify-content: center;
             width: 40px;
             font-size: 10px;
+        }
+    }
+
+    .navber_collapse {
+        @media (min-width: 992px) {
+            display: flex;
+            justify-content: center;
         }
     }
 }

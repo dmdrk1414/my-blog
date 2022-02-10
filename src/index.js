@@ -19,14 +19,16 @@ import App from './view/App';
 import Manu from './view/component/Manu';
 
 // screen
+import MainImage from './view/screen/MainImage';
 
 // html
 ReactDOM.render(
-  <React.StrictMode>
-    {/* <App /> */}
-    <Manu />
-  </React.StrictMode>,
-  document.getElementById('root'),
+    <React.StrictMode>
+        {/* <App /> */}
+        <Manu></Manu>
+        <MainImage></MainImage>
+    </React.StrictMode>,
+    document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function
