@@ -10,6 +10,12 @@ function Manu() {
                     <Navbar.Brand href="#home" className="navber_title ">
                         dmdrk1414 블로그
                     </Navbar.Brand>
+                    <Form inline className="search-container navber_search">
+                        <FormControl type="text" placeholder="Search" className="mr-sm-2 search_items search_item_1 " id="searchPost" formMethod="POST" />
+                        <Button variant="outline-success" className="search_items search_item_2">
+                            Search
+                        </Button>
+                    </Form>
                     <Navbar.Toggle aria-controls="basic-navbar-nav " className="navber_Toggle" />
                     <Navbar.Collapse id="basic-navbar-nav " className="navber_collapse">
                         <Nav className="mr-auto">
@@ -25,12 +31,6 @@ function Manu() {
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
-                    <Form inline className="search-container navber_search">
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2 search_items search_item_1 " id="searchPost" formMethod="POST" />
-                        <Button variant="outline-success" className="search_items search_item_2">
-                            Search
-                        </Button>
-                    </Form>
                 </Container>
             </Navbar>
         </div>

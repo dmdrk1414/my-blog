@@ -12,6 +12,9 @@
         }
     }
     .navber_search {
+        @media (min-width: 1201px) {
+            margin-left: 300px;
+        }
         display: flex;
 
         .search_items {

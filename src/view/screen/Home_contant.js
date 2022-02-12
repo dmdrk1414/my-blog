@@ -6,10 +6,7 @@ function MainImage() {
         // 무조건 div는 하나
         <div>
             <Container>
-                <div className="mainImage_container">
-                    <img className="mainImage_image"></img>
-                    <div className="mainImage_filter"></div>
-                </div>
+                <div className="main-contant_container"></div>
             </Container>
         </div>
     );

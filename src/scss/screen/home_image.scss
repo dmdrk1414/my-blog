@@ -1,0 +1,27 @@
+$mainImage-width: 100%;
+$mainImage-height: 400px;
+$mainImage-padding: 90px;
+
+.main-image_container {
+    padding-left: $mainImage-padding;
+    padding-right: $mainImage-padding;
+}
+
+.mainImage_container {
+    padding: 48px;
+    .mainImage_image {
+        content: url(../../../image/image_1.jpg);
+        width: $mainImage-width;
+        height: $mainImage-height;
+        filter: grayscale(70%);
+    }
+
+    @media (max-width: 426px) {
+        display: none;
+    }
+
+    @media (max-width: 769px) {
+        padding-left: 86px;
+        padding-right: $mainImage-padding;
+    }
+}

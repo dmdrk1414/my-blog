@@ -5,9 +5,11 @@
 
 // Component
 @import url(./component/manu.scss);
+@import url(./component/rightNavbar.scss);
 
 // screen
-@import url(./screen/mainImage.scss);
+@import url(./screen/home_image.scss);
+@import url(./screen/home_contant.scss);
 
 body {
     margin: 0;

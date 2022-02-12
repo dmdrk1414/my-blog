@@ -17,16 +17,20 @@ import App from './view/App';
 
 // component
 import Manu from './view/component/Manu';
+import Right_navbar from './view/component/RightNavbar';
 
 // screen
-import MainImage from './view/screen/MainImage';
+import Home_image from './view/screen/Home_image';
+import Home_contant from './view/screen/Home_contant';
 
 // html
 ReactDOM.render(
     <React.StrictMode>
         {/* <App /> */}
         <Manu></Manu>
-        <MainImage></MainImage>
+        <Home_image></Home_image>
+        <Home_contant></Home_contant>
+        <Right_navbar></Right_navbar>
     </React.StrictMode>,
     document.getElementById('root'),
 );
