@@ -5,6 +5,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
+import { Routes, Route, BrowserRouter, Link } from 'react-router-dom';
 
 // 이걸 안하면 bootstrap 사용 안된다 주의
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,27 +16,22 @@ import './scss/index.scss';
 // view 을 import 을하라
 import App from './view/App';
 
-// component
-import Manu from './view/component/Manu';
-import Right_navbar from './view/component/RightNavbar';
+// 라우트
+import Home from './router/Home';
+import Posts from './router/Posts';
 
-// screen
-import Home_image from './view/screen/Home_image';
-import Home_contant from './view/screen/Home_contant';
-
-// html
+// html 여기에 라우트를 연결하고.
+// 라우트에다가는 각각의 view을 연결하라.
 ReactDOM.render(
     <React.StrictMode>
-        {/* <App /> */}
-        <Manu></Manu>
-        <Home_image></Home_image>
-        <Home_contant></Home_contant>
-        <Right_navbar></Right_navbar>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="posts" element={<Posts />} />
+            </Routes>
+        </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root'),
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
