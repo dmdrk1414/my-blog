@@ -1,0 +1,12 @@
+$write-container_size: 880px;
+
+.write-container {
+    padding-top: 70px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: 140px;
+    width: $write-container_size;
+    height: 800px;
+    word-break: break-all;
+    background-color: white;
+}

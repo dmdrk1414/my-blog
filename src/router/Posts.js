@@ -6,7 +6,7 @@ import Manu from '../view/component/Manu';
 import Right_navbar from '../view/component/RightNavbar';
 
 //screen
-import Posts_contant from '../view/screen/Posts-GET_contant';
+import Posts_contant from '../view/screen/Posts_contant';
 
 const Posts = () => {
     return (

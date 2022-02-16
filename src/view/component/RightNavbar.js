@@ -1,5 +1,7 @@
 /* eslint-disable-next-line  */
 import { ListGroup } from 'react-bootstrap';
+/* eslint-disable-next-line  */
+import { Link } from 'react-router-dom';
 
 function RightNavbar() {
     return (
@@ -8,6 +10,7 @@ function RightNavbar() {
             <div className="right-navbar_container">
                 <div className="right-navbar_container_item_1">
                     <img className="right-navbar_image"></img>
+                    <Link to="/write">글쓰기</Link>
                 </div>
                 <div className="right-navbar_container_item_2">
                     <div className="right-navbar_description_container">

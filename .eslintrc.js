@@ -9,8 +9,10 @@ module.exports = {
         node: true,
     },
     rules: {
-        'no-conosole': ['off'],
-        'import/prefer-default=export': ['off'],
-        'arrow-body-style': ['off'],
+        'no-conosole': 'off',
+        'import/prefer-default=export': 'off',
+        'arrow-body-style': 'off',
+        'prefer-destructuring': 'off',
+        'no-unused-vars ': 'off',
     },
 };

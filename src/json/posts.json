@@ -1,0 +1,24 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "title_1",
+            "content": "content_1asdcasdasdcasdcasdcasdcascdascdascdsadcascdascdascdascdascdascdascdsacdasdcascdascdascdsa"
+        },
+        {
+            "id": 2,
+            "title": "title_2",
+            "content": "content_2"
+        },
+        {
+            "id": 3,
+            "title": "title_3",
+            "content": "content_3"
+        },
+        {
+            "id": 3,
+            "title": "title_3",
+            "content": "content_3"
+        }
+    ]
+}

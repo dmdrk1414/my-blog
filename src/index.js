@@ -19,6 +19,7 @@ import App from './view/App';
 // 라우트
 import Home from './router/Home';
 import Posts from './router/Posts';
+import Write from './router/Write';
 
 // html 여기에 라우트를 연결하고.
 // 라우트에다가는 각각의 view을 연결하라.
@@ -28,6 +29,7 @@ ReactDOM.render(
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="posts" element={<Posts />} />
+                <Route path="write" element={<Write />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>,
