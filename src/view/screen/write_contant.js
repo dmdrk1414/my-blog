@@ -1,26 +1,43 @@
 /* eslint-disable-next-line  */
 import { Button, Container, Form } from 'react-bootstrap';
 /* eslint-disable-next-line  */
-import axios from 'axios';
+import { useState } from 'react';
 
 function WriteContant() {
+    const [state, setState] = useState({ title: '', content: '' });
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const postArray = [];
-        postArray.push({
+        setState({
             title: e.target[0].value,
             content: e.target[1].value,
         });
+        // eslint-disable-next-line no-console
+
+        // const postArray = [];
+        // postArray.push({
+        //     title: e.target[0].value,
+        //     content: e.target[1].value,
+        // });
     };
 
     /* eslint-disable-next-line  */
     const handleTextChange = (event) => {
         /* eslint-disable-next-line  */
         const contentValue = event.target.value;
-        // eslint-disable-next-line no-console
-        // console.log(contentValue);
     };
+
+    const postArray = [{ title: state.title, content: state.content }];
+
+    fetch('http://localhost:5000/write', {
+        method: 'post',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify(postArray),
+    });
+
     return (
         // 무조건 div는 하나
         <div>
