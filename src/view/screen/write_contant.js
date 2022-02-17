@@ -13,13 +13,20 @@ function WriteContant() {
             title: e.target[0].value,
             content: e.target[1].value,
         });
-        // eslint-disable-next-line no-console
 
-        // const postArray = [];
-        // postArray.push({
-        //     title: e.target[0].value,
-        //     content: e.target[1].value,
-        // });
+        // eslint-disable-next-line no-console
+        const postArray = [{ title: state.title, content: state.content }];
+
+        if (state.title !== '' && state.content !== '') {
+            // express 와 리액트 연결
+            fetch('http://localhost:5000/write', {
+                method: 'post',
+                headers: {
+                    'content-type': 'application/json',
+                },
+                body: JSON.stringify(postArray),
+            });
+        }
     };
 
     /* eslint-disable-next-line  */
@@ -27,16 +34,6 @@ function WriteContant() {
         /* eslint-disable-next-line  */
         const contentValue = event.target.value;
     };
-
-    const postArray = [{ title: state.title, content: state.content }];
-
-    fetch('http://localhost:5000/write', {
-        method: 'post',
-        headers: {
-            'content-type': 'application/json',
-        },
-        body: JSON.stringify(postArray),
-    });
 
     return (
         // 무조건 div는 하나
