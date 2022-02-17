@@ -1,15 +1,13 @@
 const express = require('express');
-const path = require('path');
 const app = express();
+const port = 4000; // <- 3000에서 다른 숫자로 변경
 
-const http = require('http').createServer(app);
-
-app.use(express.static(path.join(__dirname, '../../build')));
-
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '../../build/index.html'));
+app.get('/', (req, res) => {
+    res.send('Hello World!');
 });
-
-http.listen(8080, function () {
-    console.log('listening on 8080');
+app.post('/write', (req, res) => {
+    console.log();
+});
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`);
 });

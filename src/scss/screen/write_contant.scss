@@ -4,9 +4,23 @@ $write-container_size: 880px;
     padding-top: 70px;
     padding-left: 12px;
     padding-right: 12px;
-    margin-left: 140px;
+    margin-left: 200px;
     width: $write-container_size;
-    height: 800px;
+    height: 1000px;
     word-break: break-all;
     background-color: white;
+
+    .title-form {
+        font-size: 24px;
+    }
+
+    .text-form {
+        font-size: 20px;
+    }
+
+    .write-button {
+        top: 100px;
+        right: 90px;
+        position: fixed;
+    }
 }
