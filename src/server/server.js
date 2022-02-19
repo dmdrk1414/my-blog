@@ -1,7 +1,9 @@
+const db = require('./db/db');
+const postModel = require('./db/postModel');
 const cors = require('cors');
 const express = require('express');
-
 const app = express();
+
 // bodyParser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
