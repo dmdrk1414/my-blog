@@ -10,6 +10,16 @@ $write-container_size: 880px;
     word-break: break-all;
     background-color: white;
 
+    .title-dropdown-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .catagory-container {
+            width: 200px;
+        }
+    }
+
     .title-form {
         font-size: 24px;
     }

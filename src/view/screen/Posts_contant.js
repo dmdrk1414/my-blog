@@ -1,7 +1,9 @@
 /* eslint-disable-next-line  */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 /* eslint-disable-next-line  */
 import { Container } from 'react-bootstrap';
+/* eslint-disable-next-line  */
+import Axios from 'axios';
 /* eslint-disable-next-line  */
 import postsJson from '../../json/posts.json';
 // eslint-disable-next-line no-unused-vars
@@ -14,7 +16,22 @@ function PostCall({ title, content }) {
         </div>
     );
 }
+
 function PostGetContant() {
+    Axios.get('http://localhost:5000/posts').then((res) => {
+        console.log(res);
+    });
+    // express 와 리액트 연결
+    // fetch('http://localhost:5000/posts', {
+    //     method: 'GET',
+    //     headers: {
+    //         'content-type': 'application/json',
+    //     },
+    // }).then((req, res) => {
+    //     console.log(req);
+    //     console.log(res);
+    // });
+
     const posts = postsJson.posts;
 
     // eslint-disable-next-line no-unused-vars
