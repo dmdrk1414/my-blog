@@ -2,10 +2,16 @@
 import { Button, Container, Dropdown, Form } from 'react-bootstrap';
 /* eslint-disable-next-line  */
 import { useState } from 'react';
+/* eslint-disable-next-line  */
+import axios from 'axios';
 
 function Catagory() {
     /* eslint-disable-next-line  */
     const [state, setState] = useState(['카테고리', '영어', '프로그램']);
+
+    axios.get('http://localhost:5000/write').then((res) => {
+        console.log(res.data);
+    });
 
     return (
         <Form.Select aria-label="Default select example" className="catagory-container">

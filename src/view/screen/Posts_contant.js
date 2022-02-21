@@ -4,9 +4,6 @@ import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 /* eslint-disable-next-line  */
 import Axios from 'axios';
-/* eslint-disable-next-line  */
-import postsJson from '../../json/posts.json';
-// eslint-disable-next-line no-unused-vars
 
 function PostCall({ title, content }) {
     return (
@@ -18,31 +15,64 @@ function PostCall({ title, content }) {
 }
 
 function PostGetContant() {
-    Axios.get('http://localhost:5000/posts').then((res) => {
-        console.log(res);
-    });
-    // express 와 리액트 연결
-    // fetch('http://localhost:5000/posts', {
-    //     method: 'GET',
-    //     headers: {
-    //         'content-type': 'application/json',
-    //     },
-    // }).then((req, res) => {
-    //     console.log(req);
-    //     console.log(res);
-    // });
+    /* eslint-disable-next-line  */
+    const [post, setPost] = useState({ title: [], content: [], category: [], timestamps: [] });
 
-    const posts = postsJson.posts;
+    /* eslint-disable-next-line  */
+    const [makePostsArray, setMakePostsArray] = useState({ postsArray: [] });
 
-    // eslint-disable-next-line no-unused-vars
-    const [test, changeTest] = useState(posts);
+    /* eslint-disable-next-line  */
+    let postArray = [];
+
+    useEffect(async () => {
+        // AXIOS 로이용해 express의 데이터를 리액터로 잡기
+        await Axios.get('http://localhost:5000/posts').then((res) => {
+            const dataList = res.data;
+            postArray = dataList.map((_post) => ({
+                title: _post.title,
+                content: _post.content,
+                category: _post.category,
+                timestamps: _post.timestamps,
+            }));
+            // eslint-disable-next-line no-console
+
+            for (let i = 0; i < postArray.length; i += 1) {
+                post.title[i] = postArray[i].title;
+                post.content[i] = postArray[i].content;
+                post.category[i] = postArray[i].category;
+                post.timestamps[i] = postArray[i].timestamps;
+            }
+            // eslint-disable-next-line no-console
+        });
+    }, [post]);
+
+    // db에서 받아온 데이터를 줄력하기
+    const tempPostsArray = [];
+    for (let i = 0; i < post.title.length; i += 1) {
+        tempPostsArray.push({
+            title: post.title[i],
+            content: post.content[i],
+            category: post.category[i],
+            timestamps: post.timestamps[i],
+        });
+    }
+
+    if (makePostsArray.postsArray !== tempPostsArray) {
+        setInterval(() => {
+            setMakePostsArray({
+                postsArray: [...tempPostsArray],
+            });
+            // eslint-disable-next-line no-console
+            console.log(makePostsArray.postsArray);
+        }, 1000);
+    }
 
     return (
         // 무조건 div는 하나
         <div>
             <Container>
                 <div className=" posts-container ">
-                    {posts.map((_post) => (
+                    {makePostsArray.postsArray.map((_post) => (
                         <PostCall title={_post.title} content={_post.content} />
                     ))}
                 </div>

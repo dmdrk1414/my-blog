@@ -4,11 +4,6 @@ const cors = require('cors');
 const express = require('express');
 const app = express();
 
-// const postSchema = require('./db/postSchema');
-// postSchema.find({}, (error, postSchema) => {
-//     console.log(postSchema[0].post[0]);
-// });
-
 // bodyParser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

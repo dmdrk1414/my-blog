@@ -6,6 +6,7 @@ const postSchema = require('../db/postSchema');
 const categorySchema = require('../db/categorySchema');
 
 router.get('/', (req, res) => {
+    // db에서 리액트로 보내기
     const postArray = [];
     postSchema.find({}, (error, postSchema) => {
         postSchema[0].post;

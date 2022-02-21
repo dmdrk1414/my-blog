@@ -1,10 +1,16 @@
 const mongoose = require('mongoose');
-
-const MONGO_URI = 'mongodb+srv://dmdrk1414:qkrtmdcks1!@cluster0.yz5dg.mongodb.net/my-blog';
-function connect() {
-    mongoose.connect(MONGO_URI);
+const MONGO_URL = 'mongodb+srv://dmdrk1414:qkrtmdcks1!@cluster0.yz5dg.mongodb.net/my-blog?';
+const MONGO_URL_2 = 'mongodb+srv://dmdrk1414:qkrtmdcks1!@cluster0.yz5dg.mongodb.net/my-blog?retryWrites=true&w=majority';
+async function connect() {
+    await mongoose
+        .connect(MONGO_URL, { useNewUrlParser: true })
+        .then(() => {
+            console.log('connect done');
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 }
-
 connect();
 
 const db = mongoose.connection;

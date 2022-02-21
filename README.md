@@ -6,7 +6,7 @@
 
 그리고 또한 뷰또한 그런 자연스러운 변환이 가능하다고 들었습니다.
 
-하지만 리액트가 지금 이시점에서 사용이 제일 많을 걸로 알고있기에 한번 사용해보겠습니다.
+하지만 리액트가 지금 이시점에서 사용이 제일 많ㅎ 걸로 알고있기에 한번 사용해보겠습니다.
 
 리엑트는 거대한 웹을 움직일때는 느리다고 하지만 저의 실력은 그정도가 아니니 패스합니다.
 
@@ -22,3 +22,30 @@
 # 목표는 반년? 정도 하고싶네요
 
 ## 사실 한달인데 제실력을 알기에 \*6을 한버해보았습니다.
+
+2022 02 20
+몽고 db express react
+몽고는 머 같고
+express는 참 어렵네....
+axios는 참 편한것 같네요 express와 리액트 연동이라니
+react의 usestate 참.... 편하네요 ㅎㅎ
+
+22.02.21
+
+Error: querySrv ETIMEOUT \_mongodb.\_tcp.cluster0.yz5dg.mongodb.net
+at QueryReqWrap.onresolve [as oncomplete] (dns.js:210:19) {
+errno: undefined,
+code: 'ETIMEOUT',
+syscall: 'querySrv',
+hostname: '\_mongodb.\_tcp.cluster0.yz5dg.mongodb.net'
+}
+❌ Error: querySrv ETIMEOUT \_mongodb.\_tcp.cluster0.yz5dg.mongodb.net
+✅ connected to DB 몽고db연결완료
+connect done
+^C
+
+학교에서 공부중 오류발생 dns 8 8 8 8? 봐꿔서 해결
+
+express => react  
+get => axios get = express 에서 리액트
+post <= axios post = 리액트에서 express로
