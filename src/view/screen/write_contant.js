@@ -38,22 +38,22 @@ function Catagory() {
 
 // submit 핸들러
 function WriteContant() {
-    const [state, setState] = useState({ catagory: '', title: '', content: '' });
+    const [state, setState] = useState({ category: '', title: '', content: '' });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         setState({
-            catagory: e.target[0].value,
+            category: e.target[0].value,
             title: e.target[1].value,
             content: e.target[2].value,
         });
 
         // eslint-disable-next-line no-console
-        const postArray = [{ catagory: state.catagory, title: state.title, content: state.content }];
+        const postArray = [{ category: state.category, title: state.title, content: state.content }];
         console.log(postArray);
 
-        if (state.catagory !== '카테고리' && state.title !== '' && state.content !== '') {
+        if (state.category !== '카테고리' && state.title !== '' && state.content !== '') {
             // express 와 리액트 연결
             fetch('http://localhost:5000/write', {
                 method: 'post',
