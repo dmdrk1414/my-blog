@@ -1,0 +1,33 @@
+$posts-container_size: 830px;
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 70px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: 200px;
+    width: 68%;
+    height: 1000vh;
+    background-color: white;
+    .posts-container_title {
+        width: $posts-container_size;
+        height: 60px;
+        font-size: 50px;
+        border-bottom: 1px solid;
+        border-color: black;
+        font-weight: bold;
+    }
+    .posts-container_contant {
+        word-break: break-all;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        padding-bottom: 10px;
+        line-height: 35px;
+        width: $posts-container_size;
+        font-size: 30px;
+        border-bottom: 1px solid;
+        border-color: black;
+    }
+}
