@@ -10,7 +10,6 @@ router.get('/', (req, res) => {
         res.send(categoryData);
     });
 });
-
 router.post('/', (req, res) => {
     // eslint-disable-next-line no-console
     console.log(req.body); // req.body는 리액트에서 받는 곳이다.

@@ -1,23 +1,37 @@
 /* eslint-disable-next-line  */
 import { Button, Container, Dropdown, Form } from 'react-bootstrap';
 /* eslint-disable-next-line  */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 /* eslint-disable-next-line  */
 import axios from 'axios';
 
 function Catagory() {
     /* eslint-disable-next-line  */
-    const [state, setState] = useState(['카테고리', '영어', '프로그램']);
+    const [state, setState] = useState({ title: [] });
+    /* eslint-disable-next-line  */
+    const [categoryState, categorySteState] = useState([]);
 
-    axios.get('http://localhost:5000/write').then((res) => {
-        console.log(res.data);
-    });
+    let categoryData = [];
+    useEffect(async () => {
+        // AXIOS 로이용해 express의 데이터를 리액터로 잡기
+        await axios.get('http://localhost:5000/write').then((res) => {
+            const data = res.data;
+            categoryData = data.map((_data) => ({
+                content: _data.content,
+            }));
 
+            setState({
+                title: [...categoryData],
+            });
+        });
+    }, [state]);
+
+    const stateitemArray = state.title.map((item) => item.content);
+    const categoryOption = stateitemArray.map((category) => <option value={category}>{category}</option>);
     return (
         <Form.Select aria-label="Default select example" className="catagory-container">
-            <option>{state[0]}</option>
-            <option value={state[1]}>{state[1]}</option>
-            <option value={state[2]}>{state[2]}</option>
+            <option>카테고리</option>
+            {categoryOption}
         </Form.Select>
     );
 }

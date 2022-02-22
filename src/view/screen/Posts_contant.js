@@ -63,7 +63,6 @@ function PostGetContant() {
                 postsArray: [...tempPostsArray],
             });
             // eslint-disable-next-line no-console
-            console.log(makePostsArray.postsArray);
         }, 1000);
     }
 
