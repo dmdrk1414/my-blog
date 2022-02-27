@@ -20,6 +20,9 @@ import App from './view/App';
 import Home from './router/Home';
 import Posts from './router/Posts';
 import Write from './router/Write';
+import IdPost from './router/IdPost';
+
+// const RegexId = /^post\/([A-Za-z0-9가-힣-_\s_@\!\#\$%\&\*(\):;\-\+=[\]{\}\^~]+)$/;
 
 // html 여기에 라우트를 연결하고.
 // 라우트에다가는 각각의 view을 연결하라.
@@ -30,6 +33,7 @@ ReactDOM.render(
                 <Route path="/" element={<Home />} />
                 <Route path="posts" element={<Posts />} />
                 <Route path="write" element={<Write />} />
+                <Route path="posts/:id" element={<IdPost />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>,

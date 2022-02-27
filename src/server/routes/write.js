@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 });
 router.post('/', (req, res) => {
     // eslint-disable-next-line no-console
-    console.log(req.body); // req.body는 리액트에서 받는 곳이다.
+    // console.log(req.body); // req.body는 리액트에서 받는 곳이다.
 
     // 리액트에서 쓴거 받아서 db로 보내기
     const body = req.body[0];

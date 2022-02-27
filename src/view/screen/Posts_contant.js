@@ -4,12 +4,15 @@ import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 /* eslint-disable-next-line  */
 import Axios from 'axios';
+/* eslint-disable-next-line  */
+import { Link } from 'react-router-dom';
 
-function PostCall({ title, content }) {
+function PostCall({ title, url }) {
     return (
         <div>
-            <div className="posts-container_title">{title}</div>
-            <div className="posts-container_contant">{content}</div>
+            <Link to={url}>
+                <div className="posts-container_title"> {title}</div>
+            </Link>
         </div>
     );
 }
@@ -50,6 +53,7 @@ function PostGetContant() {
     const tempPostsArray = [];
     for (let i = 0; i < post.title.length; i += 1) {
         tempPostsArray.push({
+            postid: post.title[i].replace(/\s+/, '_'),
             title: post.title[i],
             content: post.content[i],
             category: post.category[i],
@@ -63,7 +67,7 @@ function PostGetContant() {
                 postsArray: [...tempPostsArray],
             });
             // eslint-disable-next-line no-console
-        }, 1000);
+        }, 500);
     }
 
     return (
@@ -72,7 +76,7 @@ function PostGetContant() {
             <Container>
                 <div className=" posts-container ">
                     {makePostsArray.postsArray.map((_post) => (
-                        <PostCall title={_post.title} content={_post.content} />
+                        <PostCall title={_post.title} url={_post.postid} />
                     ))}
                 </div>
             </Container>
